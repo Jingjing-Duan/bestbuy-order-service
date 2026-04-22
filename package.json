@@ -1,0 +1,29 @@
+{
+  "name": "bestbuy-order-service",
+  "version": "1.0.0",
+  "description": "API service for handling customer orders.\r Creates orders, calculates totals, and sends messages to RabbitMQ for processing.",
+  "main": "index.js",
+  "scripts": {
+  "start": "node src/index.js",
+  "dev": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jingjing-Duan/bestbuy-order-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Jingjing-Duan/bestbuy-order-service/issues"
+  },
+  "homepage": "https://github.com/Jingjing-Duan/bestbuy-order-service#readme",
+  "dependencies": {
+    "amqplib": "^1.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.5.0"
+  }
+}
