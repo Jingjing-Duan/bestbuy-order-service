@@ -66,6 +66,7 @@ router.post('/', async (req, res) => {
     if (channel) {
       channel.sendToQueue(
         'order.created',
+        '',
         Buffer.from(JSON.stringify(savedOrder)),
         { persistent: true }
       );

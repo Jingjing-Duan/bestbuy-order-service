@@ -7,7 +7,7 @@ async function connectRabbitMQ() {
     const connection = await amqp.connect(process.env.RABBITMQ_URL);
     channel = await connection.createChannel();
 
-    await channel.assertQueue('order.created', { durable: true });
+    await channel.assertExchange('order.created', { durable: true });
 
     console.log('Connected to RabbitMQ');
   } catch (error) {
