@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 });
 
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(process.env.MONGO_URI)
   .then(async () => {
     console.log('Connected to MongoDB');
     await connectRabbitMQ();

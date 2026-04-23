@@ -64,12 +64,11 @@ router.post('/', async (req, res) => {
 
     const channel = getChannel();
     if (channel) {
-      channel.sendToQueue(
+        channel.publish(
         'order.created',
         '',
-        Buffer.from(JSON.stringify(savedOrder)),
-        { persistent: true }
-      );
+        Buffer.from(JSON.stringify(savedOrder))
+    );
       console.log('Order sent to RabbitMQ:', savedOrder._id.toString());
     } else {
       console.log('RabbitMQ channel not available');
